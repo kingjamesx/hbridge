@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "Novatica";
+  src: url("./assets/font/Novatica-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Novatica";
+  src: url("./assets/font/Novatica-SemiBold.ttf") format("truetype");
+
+  font-weight: 600;
+  font-style: "semi-bold";
+  font-display: swap;
+}
+@font-face {
+  font-family: "Novatica";
+  src: url("./assets/font/Novatica-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: medium;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Novatica";
+  src: url("./assets/font/Novatica.ttf") format("truetype");
+
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Novatica";
+  src: url("./assets/font/NovaticaLight.ttf") format("truetype");
+
+  font-weight: 300;
+  font-style: light;
+  font-display: swap;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply font-Novatica;
+}
+.nav-btn {
+  background: transparent; /* Transparent background by default */
+  border: 1px solid white; /* White border */
+  color: white; /* White text color */
+  padding: 9px 24px;
+  /* font-size: 16px; */
+  /* font-weight: bold; */
+  border-radius: 50px; /* Optional for rounded edges */
+  cursor: pointer;
+  position: relative; /* For pseudo-element positioning */
+  overflow: hidden; /* Hide the animation overflow */
+  z-index: 1; /* Ensure content is on top */
+  transition: color 0.2s ease-in-out, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transitions */
+}
+
+.nav-btn::before {
+  content: "";
+  position: absolute;
+  top: 100%; /* Start outside the button */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #ff0a8d,
+    #fe3c3c 28.14%,
+    #ffac2f 70.11%,
+    #1fee7b
+  ); /* Gradient background */
+  z-index: -1; /* Place the gradient behind the text */
+  transition: top 0.2s ease-in-out; /* Smooth animation */
+}
+
+.nav-btn:hover::before {
+  top: 0; /* Move the gradient into view */
+}
+
+.nav-btn:hover {
+  border-color: transparent;
+}
+
+.nav-btn:active {
+  transform: translateY(2px); /* Moves the button down slightly */
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.3); /* Adds a pressed-down shadow effect */
+}
+.home-btn {
+  background: linear-gradient(
+    90deg,
+    #ff0a8d,
+    #fe3c3c 28.14%,
+    #ffac2f 70.11%,
+    #1fee7b
+  );
+  border-radius: 56px;
+  width: 100%;
+}
+
+#my-tooltip-1 {
+  background-color: white;
+  color: black;
+  max-width: 170px;
+  font-size: 10px;
+  padding-inline: 10px;
+}
