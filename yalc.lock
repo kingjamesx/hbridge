@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "martha-react-chat-widget": {
+      "signature": "eb23c8e8336d33d515f5b19c3b97b479",
+      "file": true
+    }
+  }
+}
